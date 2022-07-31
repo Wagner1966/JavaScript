@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+
+    <style>
+        body
+        {
+            background-color: black;
+            color: white;
+            font: normal 12pt Arial;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Iniciando estudos com DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>Document Object Model</strong> em JavaScript</p>
+    <div id="msg">Clique Aqui</div>
+
+    <script>
+        window.document.write('</br></br>');
+        window.document.write(window.document.charset);
+        window.document.write('</br></br>');
+        window.document.write(window.navigator.appName);
+        window.document.write('</br></br>');
+        window.document.write(window.document.URL);
+        window.document.write('</br></br>');
+
+        // acessar a árvore por marca/TAG
+        var p1 = window.document.getElementsByTagName('p')[0];
+        window.document.write(p1.innerText);
+        window.document.write('</br>');
+        var p1 = window.document.getElementsByTagName('p')[1];
+        window.document.write(p1.innerText);
+        window.document.write('</br>');
+        window.document.write(p1.innerHTML);
+        window.document.write('</br></br>');
+        var corpo = window.document.body;
+        corpo.style.background = 'gray';
+
+        // acessar a árvore por ID
+        window.document.write(window.document.getElementById('msg'));
+        window.document.write('</br></br>');
+
+        // acessar a árvore por Nome
+        window.document.write(window.document.getElementByName());
+        window.document.write('</br></br>');
+
+        // acessar a árvore por Classe
+        window.document.write(window.document.getElementsByClassName());
+        window.document.write('</br></br>');
+
+        // acessar a árvore por Seletor
+        var d = window.document.querySelector('div#msg');   // todo ID é representado por # hash   e   toda classe é representada por um . ponto
+        d.style.background = 'white';
+        window.document.write(window.document.querySelectorAll());
+        window.document.write('</br></br>');        
+    </script>
+</body>
+</html>

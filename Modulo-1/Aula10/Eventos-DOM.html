@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+
+    <style>
+        body
+        {
+            background-color: black;
+            color: white;
+            font: normal 12pt Arial;
+        }
+
+        div#area
+        {
+            background: grey;
+            color: white;
+            font: normal 20pt Arial;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Document Object Model</h1>    
+
+    <!-- solução 1 -->
+    <!--div id="area" onclick="clicar()" onmouseout="saiu()" onmouseenter="entrou()"-->    
+    <!-- solução 2 -->
+    <div id="area">    
+        Interajir
+    </div>
+
+    <script>
+        var divArea = window.document.getElementById('area');
+        // usar o evento listener ao invés dos on... na DIV
+        divArea.addEventListener('click', clicar);
+        divArea.addEventListener('mouseenter', entrou);
+        divArea.addEventListener('mouseout', saiu);
+
+        function clicar()
+        {
+            //var divArea = window.document.getElementById('area');
+            divArea.innerText = 'Clicou';
+            divArea.style.background = 'blue';
+        }
+
+        function entrou()
+        {
+            //var divArea = window.document.getElementById('area');
+            divArea.innerText = 'Oi Ponteiro';
+            divArea.style.background = 'green';
+        }
+
+        function saiu()
+        {
+            //var divArea = window.document.getElementById('area');
+            divArea.innerText = 'Tchau Ponteiro';
+            divArea.style.background = 'grey';
+        }
+    </script>
+</body>
+</html>
